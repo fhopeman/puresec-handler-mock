@@ -1,0 +1,27 @@
+{
+  "name": "puresec-trigger-mock",
+  "version": "0.0.1",
+  "description": "mock implementation of puresec trigger microservice",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://fhopeman@github.com/fhopeman/puresec-trigger-mock.git"
+  },
+  "keywords": [
+    "microservice",
+    "puresec",
+    "trigger",
+    "mock"
+  ],
+  "author": "Fabian Hoffmann",
+  "bugs": {
+    "url": "https://github.com/fhopeman/puresec-trigger-mock/issues"
+  },
+  "homepage": "https://github.com/fhopeman/puresec-trigger-mock#readme",
+  "dependencies": {
+    "express": "^4.12.3"
+  }
+}
