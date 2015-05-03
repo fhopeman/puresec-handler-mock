@@ -1,26 +1,26 @@
 {
-  "name": "puresec-trigger-mock",
+  "name": "puresec-handler-mock",
   "version": "0.0.1",
-  "description": "mock implementation of puresec trigger microservice",
+  "description": "mock implementation of puresec handler microservice",
   "main": "app.js",
   "scripts": {
     "test": "test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://fhopeman@github.com/fhopeman/puresec-trigger-mock.git"
+    "url": "git+https://fhopeman@github.com/fhopeman/puresec-handler-mock.git"
   },
   "keywords": [
     "microservice",
     "puresec",
-    "trigger",
+    "handler",
     "mock"
   ],
   "author": "Fabian Hoffmann",
   "bugs": {
-    "url": "https://github.com/fhopeman/puresec-trigger-mock/issues"
+    "url": "https://github.com/fhopeman/puresec-handler-mock/issues"
   },
-  "homepage": "https://github.com/fhopeman/puresec-trigger-mock#readme",
+  "homepage": "https://github.com/fhopeman/puresec-handler-mock#readme",
   "dependencies": {
     "body-parser": "^1.12.3",
     "express": "^4.12.3"

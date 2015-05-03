@@ -27,7 +27,7 @@ app.post("/notify", function(req, res) {
 
 app.listen(port, function() {
     var url = network.currentCallbackAddress() + ":" + port;
-    console.log("trigger dummy microservice listening at '%s'", url);
+    console.log("handler dummy microservice listening at '%s'", url);
 
     master.register(url, urlMaster, registrationInterval);
 });

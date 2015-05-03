@@ -4,11 +4,11 @@ var register = function(url, urlMaster, registrationInterval) {
     console.log("\nregistering at '%s' ..", urlMaster);
 
     request({
-        uri: urlMaster + "/alarm/register/trigger",
+        uri: urlMaster + "/alarm/register/handler",
         method: "POST",
         form: {
-            name: "Mock Trigger 1",
-            description: "Mock implementation of trigger",
+            name: "Mock Handler 1",
+            description: "Mock implementation of handler",
             url: url
         }
     }, function(error, _, body) {

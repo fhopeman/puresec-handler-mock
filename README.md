@@ -1,2 +1,2 @@
-# puresec-trigger-mock
-mock implementation of trigger api
+# puresec-handler-mock
+mock implementation of handler api
