@@ -1,7 +1,7 @@
 var express = require("express");
 var bodyParser = require('body-parser');
 var master = require("./master.js");
-var network = require("./network.js");
+var puresecMicroservice = require("puresec-microservice-js");
 
 var app = express();
 
@@ -26,7 +26,7 @@ app.post("/notify", function(req, res) {
 });
 
 app.listen(port, function() {
-    var url = network.currentCallbackAddress() + ":" + port;
+    var url = puresecMicroservice.currentAddress() + ":" + port;
     console.log("handler dummy microservice listening at '%s'", url);
 
     master.register(url, urlMaster, registrationInterval);
