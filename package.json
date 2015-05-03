@@ -24,6 +24,6 @@
   "dependencies": {
     "body-parser": "^1.12.3",
     "express": "^4.12.3",
-    "puresec-microservice-js": "git://github.com/fhopeman/puresec-microservice-js.git"
+    "puresec-microservice-js": "git://github.com/fhopeman/puresec-microservice-js.git#0.1.0"
   }
 }
