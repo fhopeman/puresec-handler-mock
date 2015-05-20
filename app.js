@@ -19,10 +19,9 @@ pmsUtils.addHealthCheck(app, function() {
     logger.info("health: UP");
 });
 
-app.post("/notify", function(req, res) {
+pmsUtils.addNotifyEndpoint(app, function() {
     logger.info("\nnotification received ..");
     logger.info(req.body);
-    res.send("OK");
 });
 
 app.listen(port, function() {
