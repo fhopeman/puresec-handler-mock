@@ -1,8 +1,10 @@
 var express = require("express");
 var bodyParser = require('body-parser');
+var logger = require('winston');
 var puresecMicroservice = require("puresec-microservice-js");
 
 var app = express();
+var pmsUtils = puresecMicroservice.utils();
 
 var urlMaster = process.env.MASTER_URL || process.argv[2] || "http://localhost:3000";
 var registrationInterval = process.env.MASTER_REGISTRATION_INTERVAL || process.argv[3] || 5;
@@ -13,19 +15,18 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.get("/health", function(req, res) {
-    console.log("\nhealth: OK");
-    res.send("OK");
+pmsUtils.addHealthCheck(app, function() {
+    logger.info("health: UP");
 });
 
 app.post("/notify", function(req, res) {
-    console.log("\nnotification received ..");
-    console.log(req.body);
+    logger.info("\nnotification received ..");
+    logger.info(req.body);
     res.send("OK");
 });
 
 app.listen(port, function() {
-    var urlClient = puresecMicroservice.utils().currentAddress() + ":" + port;
+    var urlClient = pmsUtils.currentAddress() + ":" + port;
     var master = puresecMicroservice.master(urlMaster);
 
     var registerOptions = {
@@ -34,10 +35,10 @@ app.listen(port, function() {
         type: "handler",
         address: urlClient,
         onSuccess: function(jsonBody) {
-            console.log("registration result: ", jsonBody);
+            logger.info("registration result: ", jsonBody);
         },
         onError: function(error) {
-            console.log("error during registration", error, "\nretry ..");
+            logger.info("error during registration", error, "\nretry ..");
             setTimeout(function() {
                 master.register(registerOptions);
             }, registrationInterval * 1000);
@@ -45,6 +46,6 @@ app.listen(port, function() {
     };
 
     // register
-    console.log("try to register ..");
+    logger.info("try to register ..");
     master.register(registerOptions);
 });
