@@ -27,12 +27,11 @@ webApp.registerNotificationEndpoint(app, function() {
 });
 
 app.listen(port, function() {
-    var urlClient = utils.currentAddress() + ":" + port;
     var registerOptions = {
         name: "Mock Handler 1",
         description: "Mock implementation of handler",
         type: "handler",
-        address: urlClient,
+        address: utils.currentAddress(port),
         onSuccess: function(jsonBody) {
             logger.info("registration result: ", jsonBody);
         },
