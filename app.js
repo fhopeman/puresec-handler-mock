@@ -21,7 +21,7 @@ webApp.registerHealthCheckEndpoint(app, function() {
     logger.info("health: UP");
 });
 
-webApp.registerNotificationEndpoint(app, function() {
+webApp.registerNotificationEndpoint(app, function(req, res) {
     logger.info("\nnotification received ..");
     logger.info(req.body);
 });
