@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 webApp.registerHealthCheckEndpoint(app, function() {
-    logger.info("health: UP");
+    logger.debug("health: UP");
 });
 
 webApp.registerNotificationEndpoint(app, function(req, res) {
